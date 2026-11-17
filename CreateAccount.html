@@ -22,7 +22,19 @@
         <button type="submit">Create Account</button>
         </form>
         <script>
-            
+        document.getElementById("createAccountForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const accountType = document.getElementById("accountType").value;
+
+            if (accountType == "User") {
+                window.location.href = "UserHome.html";
+            } else if (accountType == "Donator") {
+                window.location.href = "DonatorHome.html";
+            } else if (accountType == "Organization") {
+                window.location.href = "OrganizationHome.html";
+            }
+        });
         </script>
     </body>
 </html>
