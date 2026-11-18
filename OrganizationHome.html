@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Gifts & Goods - Organization Home</title>
+  </head>
+<body>
+
+<h1>Gifts & Goods</h1>
+ <nav>
+   <button type="button">Edit</button>
+   <a href="ContactUs.html">Contact Us</a>
+   <button type="button">Account</button>
+ </nav>
+  <h2>Organization Hours</h2>
+
+  <table border="1">
+    <tr>
+      <th>Day</th>
+      <th>Open From</th>
+      <th>Open Until</th>
+    </tr>
+  <tr>
+    <td>Monday</td>
+    <td><input type="time" name="mondayOpen"></td>
+    <td><input type="time" name="mondayClose"></td>
+  </tr>
+  <tr>
+    <td>Tuesday</td>
+    <td><input type="time" name="tuesdayOpen"></td>
+    <td><input type="time" name="tuesdayClose"></td>
+     </tr>
+  <tr>
+    <td>Wednesday</td>
+    <td><input type="time" name="wednesdayOpen"></td>
+    <td><input type="time" name="wednesdayClose"></td>
+  </tr>
+  <tr>
+    <td>Thursday</td>
+    <td><input type="time" name="thursdayOpen"></td>
+    <td><input type="time" name="thursdayClose"></td>
+  </tr>
+  <tr>
+    <td>Friday</td>
+    <td><input type="time" name="fridayOpen"></td>
+    <td><input type="time" name="fridayClose"></td>
+  </tr>
+  <tr>
+    <td>Saturday</td>
+    <td><input type="time" name="saturdayOpen"></td>
+    <td><input type="time" name="saturdayClose"></td>
+  </tr>
+  <tr>
+    <td>Sunday</td>
+    <td><input type="time" name="sundayOpen"></td>
+    <td><input type="time" name="sundayClose"></td>
+  </tr>
+  </table>
+<button type="button" id="saveHours">Save Hours</button>
+
+<script>
+    document.getElementById("saveHours").addEventListener("click", function() {
+  const inputs = document.querySelectorAll('input[type="time"]');
+  const hours = {};
+
+  inputs.forEach(function(input) {
+      hours[input.name] = input.value;
+  });
+
+  localStorage.setItem("organizationHours", JSON.stringify(hours));
+  alert("Hours saved successfully!");
+  });    
+</script>
+
+  
+</body> 
+</html>
